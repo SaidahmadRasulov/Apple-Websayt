@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple — Rasmiy Premium Do'kon | O'zbekiston</title>
+    
+    <!-- Google Fonts: Inter (Apple SF Pro muqobili) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    },
+                    colors: {
+                        apple: {
+                            black: '#000000',
+                            dark: '#161617',
+                            card: '#1d1d1f',
+                            silver: '#f5f5f7',
+                            gray: '#86868b',
+                            blue: '#0071e3',
+                            blueHover: '#0077ed',
+                            titanium: '#a19f9a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Owl Carousel 2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Maxsus Apple Effektlari va Animatsiyalar -->
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #000000;
+            color: #f5f5f7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Apple Glassmorphism Navbar */
+        .apple-glass {
+            background: rgba(22, 22, 23, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Titan Gradient Matnlar */
+        .text-titanium-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #d2d2d7 45%, #86868b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-duo-gradient {
+            background: linear-gradient(90deg, #f5f5f7 0%, #b8b5ad 50%, #6e6d72 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Scroll Reveal Animatsiyasi (Apple.com uslubida) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px) scale(0.985);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Hero Mahsulot Yengil Suzish va Yorug'lik Effekti */
+        .hero-glow {
+            background: radial-gradient(circle at 50% 45%, rgba(161, 159, 154, 0.16) 0%, rgba(0, 0, 0, 0) 68%);
+        }
+
+        /* Owl Carousel Maxsus Stil */
+        .owl-carousel .owl-stage {
+            display: flex;
+        }
+        .owl-carousel .owl-item {
+            display: flex;
+            flex: 1 0 auto;
+        }
+        .owl-dots {
+            margin-top: 28px !important;
+        }
+        .owl-theme .owl-dots .owl-dot span {
+            background: rgba(255, 255, 255, 0.25) !important;
+            width: 8px !important;
+            height: 8px !important;
+            transition: all 0.3s ease;
+        }
+        .owl-theme .owl-dots .owl-dot.active span {
+            background: #f5f5f7 !important;
+            width: 24px !important;
+            border-radius: 999px !important;
+        }
+
+        /* Karta Hover Effekti */
+        .apple-product-card {
+            background: linear-gradient(180deg, #1d1d1f 0%, #141415 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+        }
+        .apple-product-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.22);
+            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.85);
+        }
+        .apple-product-card img {
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .apple-product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Xarita Qorong'u Filtr */
+        .dark-map-frame {
+            filter: grayscale(100%) invert(92%) contrast(90%);
+        }
+    </style>
+</head>
+<body class="selection:bg-apple-blue selection:text-white">
+
+    <!-- 1. NAVIGATSIYA PANELI (Sticky Apple Glassmorphism) -->
+    <header class="fixed top-0 left-0 right-0 z-50 apple-glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-12 md:h-14">
+                <!-- Apple Rasmiy Logotipi -->
+                <a href="#home" class="flex items-center space-x-2 text-apple-silver hover:text-white transition-opacity opacity-90 hover:opacity-100" aria-label="Apple Bosh Sahifa">
+                    <svg class="w-4 h-5 fill-current" viewBox="0 0 170 170">
+                        <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.82-11.77-14.37-5.05-7.91-9.2-17.07-12.45-27.49-3.25-10.42-4.88-20.38-4.88-29.89 0-11.17 2.81-20.69 8.43-28.56 5.62-7.87 12.77-11.96 21.45-12.27 4.48 0 9.61 1.32 15.39 3.95 5.78 2.63 9.48 3.99 11.11 4.07 1.35 0 5.45-1.57 12.31-4.7 6.86-3.13 12.66-4.48 17.4-4.05 13.07 1.05 22.91 6.19 29.52 15.42-11.71 7.11-17.46 16.95-17.25 29.51.21 9.85 3.88 18.04 11.01 24.58 7.13 6.54 15.61 10.02 25.44 10.45-2.03 6.13-4.38 12.01-7.05 17.64zM119.22 31.83c0 7.67-2.8 14.84-8.41 21.52-6.75 7.89-14.92 12.44-23.79 11.72-.16-.95-.25-1.96-.25-3.03 0-7.36 3.16-15.22 8.78-21.65 2.8-3.21 6.37-5.88 10.71-8.01 4.34-2.13 8.44-3.32 12.31-3.57.43 1.03.65 2.04.65 3.02z"/>
+                    </svg>
+                    <span class="text-xs font-semibold tracking-wider uppercase text-apple-gray hidden sm:inline">Uzbekistan</span>
+                </a>
+
+                <!-- Desktop Menyu Havolalari -->
+                <nav class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-wide text-apple-silver/85">
+                    <a href="#home" class="hover:text-white transition-colors">Bosh sahifa</a>
+                    <a href="#about" class="hover:text-white transition-colors">Kompaniya haqida</a>
+                    <a href="#products" class="hover:text-white transition-colors">Mahsulotlar</a>
+                    <a href="#iphone18duo" class="hover:text-white transition-colors">iPhone 18 Duo</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Bog'lanish</a>
+                </nav>
+
+                <!-- O'ng Tomon Tugmalar -->
+                <div class="flex items-center space-x-4">
+                    <a href="tel:+998777771122" class="hidden lg:inline-flex items-center text-xs text-apple-gray hover:text-white transition-colors">
+                        +998 77 777 11 22
+                    </a>
+                    <button onclick="openOrderModal('MacBook Pro 16 M4 Max', '$3,499')" class="bg-apple-blue hover:bg-apple-blueHover text-white text-xs font-medium px-3.5 py-1.5 rounded-full transition-all shadow-sm">
+                        Buyurtma
+                    </button>
+                    <!-- Mobil Menyu Tugmasi -->
+                    <button id="mobile-menu-btn" class="md:hidden text-apple-silver hover:text-white p-1.5" aria-label="Menyu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 8h16M4 16h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobil Ochiluvchi Menyu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-apple-dark/95 border-t border-white/10 px-6 py-5 space-y-4">
+            <a href="#home" class="block text-sm text-apple-silver hover:text-white mobile-link">Bosh sahifa</a>
+            <a href="#about" class="block text-sm text-apple-silver hover:text-white mobile-link">Kompaniya haqida</a>
+            <a href="#products" class="block text-sm text-apple-silver hover:text-white mobile-link">Mahsulotlar</a>
+            <a href="#iphone18duo" class="block text-sm text-apple-silver hover:text-white mobile-link">iPhone 18 Duo</a>
+            <a href="#contact" class="block text-sm text-apple-silver hover:text-white mobile-link">Bog'lanish</a>
+            <div class="pt-3 border-t border-white/10">
+                <a href="tel:+998777771122" class="text-sm font-medium text-apple-blue">+998 77 777 11 22</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. BOSH SAHIFA (HERO SECTION — Eng Yangi MacBook Pro) -->
+    <section id="home" class="relative min-h-screen pt-24 pb-16 md:pt-32 md:pb-24 flex flex-col justify-between items-center text-center bg-apple-black hero-glow overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 z-10 reveal active">
+            <span class="inline-block text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-apple-titanium mb-3">
+                Yangi avlod • M4 Max chipi
+            </span>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-titanium-gradient leading-[1.05] mb-5">
+                MacBook Pro.
+            </h1>
+            <p class="text-xl sm:text-2xl md:text-3xl font-medium text-apple-silver/90 tracking-tight max-w-3xl mx-auto mb-3">
+                Aql bovar qilmas qudrat. Mutlaqo yangi Space Black korpusida.
+            </p>
+            <p class="text-sm sm:text-base text-apple-gray max-w-xl mx-auto mb-8">
+                22 soatgacha batareya quvvati, Liquid Retina XDR displeyi va professionallar uchun yaratilgan eng tezkor arxitektura.
+            </p>
+
+            <!-- Apple Stilidagi CTA Tugmalar -->
+            <div class="flex flex-wrap items-center justify-center gap-4 mb-12">
+                <button onclick="openOrderModal('MacBook Pro 16 (M4 Max, Space Black)', '$3,499')" class="bg-apple-blue hover:bg-apple-blueHover text-white font-medium text-sm sm:text-base px-7 py-3 rounded-full transition-all duration-300 shadow-lg shadow-apple-blue/25">
+                    Sotib olish
+                </button>
+                <a href="#products" class="border border-apple-gray/50 hover:border-white text-apple-silver hover:text-white font-medium text-sm sm:text-base px-7 py-3 rounded-full transition-all duration-300">
+                    Barcha modellarni ko'rish
+                </a>
+            </div>
+        </div>
+
+        <!-- Eng Yangi MacBook Pro Yuqori Sifatli Tasviri -->
+        <div class="relative w-full max-w-6xl mx-auto px-4 sm:px-8 z-10 reveal active">
+            <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.95)] bg-apple-dark">
+                <img 
+                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1800&q=95" 
+                    alt="Apple MacBook Pro Space Black" 
+                    onerror="this.src='https://placehold.co/1600x900/161617/f5f5f7?text=Apple+MacBook+Pro'"
+                    class="w-full h-[300px] sm:h-[440px] md:h-[560px] object-cover object-center transform hover:scale-[1.02] transition-transform duration-1000"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20"></div>
+                <div class="absolute bottom-5 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-end justify-between text-left gap-2">
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-apple-titanium">MacBook Pro 16"</p>
+                        <p class="text-sm sm:text-base font-medium text-white">16 yadroli CPU • 40 yadroli GPU • 128 GB gacha birlashtirilgan xotira</p>
+                    </div>
+                    <span class="text-xs sm:text-sm font-semibold text-apple-silver bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full">
+                        $2,499 dan boshlanadi
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. KOMPANIYA HAQIDA BO'LIMI -->
+    <section id="about" class="py-24 md:py-32 bg-apple-dark border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Chap ustun: Kompaniya haqida matn va statistika -->
+                <div class="lg:col-span-6 reveal">
+                    <span class="text-xs font-semibold uppercase tracking-[0.2em] text-apple-titanium block mb-3">
+                        Kompaniya haqida
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight mb-6">
+                        Innovatsiya va mukammallik uyg'unligi.
+                    </h2>
+                    <p class="text-base sm:text-lg text-apple-silver/80 leading-relaxed mb-5">
+                        Apple — texnologiya olamida soddalik, xavfsizlik va yuqori unumdorlik standartlarini belgilovchi yetakchi kompaniya. Har bir qurilma — MacBook, iPhone, iPad, Apple Watch va AirPods — yagona ekotizim sifatida uzluksiz ishlash uchun yaratilgan.
+                    </p>
+                    <p class="text-sm sm:text-base text-apple-gray leading-relaxed mb-8">
+                        O'zbekistondagi rasmiy hamkorlik markazimiz mijozlarga 100% original Apple texnikasi, rasmiy xalqaro kafolat va premium darajadagi texnik xizmat ko'rsatishni taqdim etadi.
+                    </p>
+
+                    <!-- Asosiy ko'rsatkichlar -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white">100%</p>
+                            <p class="text-xs sm:text-sm text-apple-gray mt-1">Original mahsulotlar</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white">1 Yil</p>
+                            <p class="text-xs sm:text-sm text-apple-gray mt-1">Rasmiy Apple kafolati</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white">24/7</p>
+                            <p class="text-xs sm:text-sm text-apple-gray mt-1">Premium qo'llab-quvvatlash</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O'ng ustun: Apple Kompaniya Binolari / Flagship Store Tasviri -->
+                <div class="lg:col-span-6 reveal">
+                    <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-apple-black">
+                        <img 
+                            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=95" 
+                            alt="Apple Store Flagship Architecture" 
+                            onerror="this.src='https://placehold.co/1200x900/1d1d1f/f5f5f7?text=Apple+Store+Architecture'"
+                            class="w-full h-[380px] sm:h-[480px] object-cover object-center"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <p class="text-xs uppercase tracking-widest text-apple-titanium mb-1">Apple Ekotizimi</p>
+                            <p class="text-base sm:text-lg font-semibold text-white">Minimalistik dizayn. Maksimal imkoniyatlar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. APPLE MAHSULOTLARI KARUSELI (Owl Carousel) -->
+    <section id="products" class="py-24 md:py-32 bg-apple-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Bo'lim Sarlavhasi va Karusel Boshqaruv Tugmalari -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 reveal">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-[0.2em] text-apple-titanium block mb-3">
+                        Rasmiy Katalog
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+                        Eng so'nggi Apple qurilmalari.
+                    </h2>
+                </div>
+
+                <!-- Owl Carousel Oldinga / Orqaga Tugmalari -->
+                <div class="flex items-center space-x-3">
+                    <button id="owl-prev-btn" class="w-11 h-11 rounded-full bg-apple-card hover:bg-white/15 border border-white/10 flex items-center justify-center text-white transition-all" aria-label="Oldingi mahsulot">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button id="owl-next-btn" class="w-11 h-11 rounded-full bg-apple-card hover:bg-white/15 border border-white/10 flex items-center justify-center text-white transition-all" aria-label="Keyingi mahsulot">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Owl Carousel Konteyneri (Faqat Apple Mahsulotlari) -->
+            <div class="owl-carousel owl-theme reveal" id="apple-products-carousel">
+                
+                <!-- 1. MacBook Pro -->
+                <div class="item w-full p-2">
+                    <div class="apple-product-card rounded-3xl overflow-hidden flex flex-col justify-between w-full h-full">
+                        <div>
+                            <div class="h-64 bg-black/50 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=900&q=90" alt="MacBook Pro M4" onerror="this.src='https://placehold.co/800x600/1d1d1f/f5f5f7?text=MacBook+Pro'" class="w-full h-full object-cover">
+                                <span class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-[11px] font-semibold uppercase tracking-wider text-apple-titanium px-3 py-1 rounded-full border border-white/10">Mac</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">MacBook Pro 16"</h3>
+                                <p class="text-sm text-apple-gray leading-relaxed mb-4">
+                                    M4 Max protsessori, Liquid Retina XDR displeyi va Space Black titan korpusi.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-3 border-t border-white/5 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-apple-gray block">Narxi</span>
+                                <span class="text-lg font-bold text-white">$2,499</span>
+                            </div>
+                            <button onclick="openOrderModal('MacBook Pro 16&quot;', '$2,499')" class="bg-apple-blue hover:bg-apple-blueHover text-white text-xs font-medium px-4 py-2.5 rounded-full transition-colors">
+                                Sotib olish
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. iPhone 17 Pro Max -->
+                <div class="item w-full p-2">
+                    <div class="apple-product-card rounded-3xl overflow-hidden flex flex-col justify-between w-full h-full">
+                        <div>
+                            <div class="h-64 bg-black/50 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=900&q=90" alt="iPhone Pro Max Titanium" onerror="this.src='https://placehold.co/800x600/1d1d1f/f5f5f7?text=iPhone+Pro+Max'" class="w-full h-full object-cover">
+                                <span class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-[11px] font-semibold uppercase tracking-wider text-apple-titanium px-3 py-1 rounded-full border border-white/10">iPhone</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">iPhone 17 Pro Max</h3>
+                                <p class="text-sm text-apple-gray leading-relaxed mb-4">
+                                    Grade 5 titan korpus, 48 MP Pro kamera tizimi va A19 Pro super chipi.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-3 border-t border-white/5 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-apple-gray block">Narxi</span>
+                                <span class="text-lg font-bold text-white">$1,299</span>
+                            </div>
+                            <button onclick="openOrderModal('iPhone 17 Pro Max', '$1,299')" class="bg-apple-blue hover:bg-apple-blueHover text-white text-xs font-medium px-4 py-2.5 rounded-full transition-colors">
+                                Sotib olish
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. iPad Pro M4 -->
+                <div class="item w-full p-2">
+                    <div class="apple-product-card rounded-3xl overflow-hidden flex flex-col justify-between w-full h-full">
+                        <div>
+                            <div class="h-64 bg-black/50 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=900&q=90" alt="iPad Pro" onerror="this.src='https://placehold.co/800x600/1d1d1f/f5f5f7?text=iPad+Pro'" class="w-full h-full object-cover">
+                                <span class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-[11px] font-semibold uppercase tracking-wider text-apple-titanium px-3 py-1 rounded-full border border-white/10">iPad</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">iPad Pro 13"</h3>
+                                <p class="text-sm text-apple-gray leading-relaxed mb-4">
+                                    Ultra Retina XDR OLED ekran, rekord darajadagi yupqa dizayn va Apple Pencil Pro.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-3 border-t border-white/5 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-apple-gray block">Narxi</span>
+                                <span class="text-lg font-bold text-white">$1,199</span>
+                            </div>
+                            <button onclick="openOrderModal('iPad Pro 13&quot;', '$1,199')" class="bg-apple-blue hover:bg-apple-blueHover text-white text-xs font-medium px-4 py-2.5 rounded-full transition-colors">
+                                Sotib olish
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Apple Watch Ultra 2 -->
+                <div class="item w-full p-2">
+                    <div class="apple-product-card rounded-3xl overflow-hidden flex flex-col justify-between w-full h-full">
+                        <div>
+                            <div class="h-64 bg-black/50 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?auto=format&fit=crop&w=900&q=90" alt="Apple Watch Ultra" onerror="this.src='https://placehold.co/800x600/1d1d1f/f5f5f7?text=Apple+Watch'" class="w-full h-full object-cover">
+                                <span class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-[11px] font-semibold uppercase tracking-wider text-apple-titanium px-3 py-1 rounded-full border border-white/10">Watch</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Apple Watch Ultra</h3>
+                                <p class="text-sm text-apple-gray leading-relaxed mb-4">
+                                    Qora titan korpus, 36 soatlik batareya va ekstremal sharoitlar uchun yaratilgan.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-3 border-t border-white/5 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-apple-gray block">Narxi</span>
+                                <span class="text-lg font-bold text-white">$799</span>
+                            </div>
+                            <button onclick="openOrderModal('Apple Watch Ultra', '$799')" class="bg-apple-blue hover:bg-apple-blueHover text-white text-xs font-medium px-4 py-2.5 rounded-full transition-colors">
+                                Sotib olish
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. AirPods Max / Pro -->
+                <div class="item w-full p-2">
+                    <div class="apple-product-card rounded-3xl overflow-hidden flex flex-col justify-between w-full h-full">
+                        <div>
+                            <div class="h-64 bg-black/50 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?auto=format&fit=crop&w=900&q=90" alt="Apple AirPods Max" onerror="this.src='https://placehold.co/800x600/1d1d1f/f5f5f7?text=AirPods+Max'" class="w-full h-full object-cover">
+                                <span class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-[11px] font-semibold uppercase tracking-wider text-apple-titanium px-3 py-1 rounded-full border border-white/10">AirPods</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">AirPods Max Midnight</h3>
+                                <p class="text-sm text-apple-gray leading-relaxed mb-4">
+                                    Studiyaviy toza ovoz, faol shovqinni bostirish (ANC) va fazoviy audio texnologiyasi.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-3 border-t border-white/5 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-apple-gray block">Narxi</span>
+                                <span class="text-lg font-bold text-white">$549</span>
+                            </div>
+                            <button onclick="openOrderModal('AirPods Max Midnight', '$549')" class="bg-apple-blue hover:bg-apple-blueHover text-white text-xs font-medium px-4 py-2.5 rounded-full transition-colors">
+                                Sotib olish
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. YANGI CHIQKAN IPHONE 18 DUO REKLAMA BO'LIMI -->
+    <section id="iphone18duo" class="py-24 md:py-36 bg-gradient-to-b from-apple-dark via-black to-apple-dark border-t border-white/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="rounded-[2.2rem] bg-gradient-to-br from-[#1d1d1f] via-[#111112] to-black border border-white/15 p-8 sm:p-12 md:p-16 shadow-2xl reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Chap taraf: iPhone 18 Duo Reklama Ma'lumotlari -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full">
+                            <span class="w-2 h-2 rounded-full bg-apple-blue animate-pulse"></span>
+                            <span class="text-xs font-semibold uppercase tracking-widest text-apple-silver">Mutlaq Premyera</span>
+                        </div>
+
+                        <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-duo-gradient leading-tight">
+                            iPhone 18 Duo.
+                        </h2>
+                        <p class="text-xl sm:text-2xl font-medium text-white">
+                            Ikki karra imkoniyat. Cheksiz mukammallik.
+                        </p>
+                        <p class="text-sm sm:text-base text-apple-gray leading-relaxed">
+                            Apple tarixidagi eng inqilobiy smartfon. Aerokosmik qora titan korpus, ikki tomonlama aqlli ProMotion XDR displey tizimi va sun'iy intellektga asoslangan A20 Pro Bionic protsessori endi bitta qurilmada jamlangan.
+                        </p>
+
+                        <!-- Texnik ustunliklar -->
+                        <div class="grid grid-cols-2 gap-4 pt-2">
+                            <div class="bg-black/40 border border-white/10 rounded-2xl p-4">
+                                <p class="text-lg font-bold text-white">A20 Pro</p>
+                                <p class="text-xs text-apple-gray mt-0.5">2nm neyron arxitektura</p>
+                            </div>
+                            <div class="bg-black/40 border border-white/10 rounded-2xl p-4">
+                                <p class="text-lg font-bold text-white">Duo XDR</p>
+                                <p class="text-xs text-apple-gray mt-0.5">120Hz ikki ekranli tizim</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap items-center gap-4">
+                            <button onclick="openOrderModal('iPhone 18 Duo (512GB, Obsidian Titanium)', '$1,599')" class="bg-white hover:bg-apple-silver text-black font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full transition-all shadow-lg">
+                                Oldindan buyurtma berish
+                            </button>
+                            <span class="text-sm text-apple-titanium font-medium">
+                                Narxi: $1,599 dan
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- O'ng taraf: iPhone 18 Duo Yuqori Sifatli Tasviri -->
+                    <div class="lg:col-span-6">
+                        <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-black shadow-[0_20px_70px_rgba(0,0,0,0.9)]">
+                            <img 
+                                src="https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?auto=format&fit=crop&w=1400&q=95" 
+                                alt="iPhone 18 Duo Obsidian Titanium" 
+                                onerror="this.src='https://placehold.co/1000x1000/000000/f5f5f7?text=iPhone+18+Duo'"
+                                class="w-full h-[380px] sm:h-[480px] object-cover object-center hover:scale-105 transition-transform duration-700"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
+                                <span class="text-xs font-medium text-apple-silver/90 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10">
+                                    Obsidian Titanium • 256GB / 512GB / 1TB
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. BOG'LANISH VA LOKATSIYA BO'LIMI -->
+    <section id="contact" class="py-24 md:py-32 bg-apple-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-14 reveal">
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-apple-titanium block mb-3">
+                    Aloqa markazi
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+                    Biz bilan bog'laning.
+                </h2>
+                <p class="text-base text-apple-gray">
+                    Savollaringiz bormi yoki mahsulotni ko'rib xarid qilmoqchimisiz? Toshkentdagi rasmiy showroomimizga tashrif buyuring yoki qo'ng'iroq qiling.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 reveal">
+                <!-- Chap ustun: Telefon raqam, Manzil va Qayta aloqa formasi -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Asosiy Telefon Kartasi -->
+                    <div class="bg-apple-card border border-white/10 rounded-3xl p-6 sm:p-8">
+                        <p class="text-xs uppercase tracking-widest text-apple-gray mb-2">Yagona Call-Markaz</p>
+                        <a href="tel:+998777771122" class="text-2xl sm:text-3xl font-bold text-white hover:text-apple-blue transition-colors block mb-4">
+                            +998 77 777 11 22
+                        </a>
+                        <div class="space-y-2 text-sm text-apple-silver/80 pt-4 border-t border-white/10">
+                            <p><span class="text-apple-gray">Manzil:</span> Toshkent shahri, Amir Temur shoh ko'chasi, 107B</p>
+                            <p><span class="text-apple-gray">Ish vaqti:</span> Har kuni 10:00 dan 22:00 gacha</p>
+                        </div>
+                    </div>
+
+                    <!-- Mijoz bog'lanish formasi -->
+                    <form id="contact-form" class="bg-apple-card border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+                        <h3 class="text-lg font-semibold text-white">Xabar qoldirish</h3>
+                        <div>
+                            <input type="text" required placeholder="Ismingiz" class="w-full bg-black/60 border border-white/10 focus:border-apple-blue rounded-xl px-4 py-3 text-sm text-white placeholder-apple-gray outline-none transition-colors">
+                        </div>
+                        <div>
+                            <input type="tel" required placeholder="+998 (__) ___ __ __" class="w-full bg-black/60 border border-white/10 focus:border-apple-blue rounded-xl px-4 py-3 text-sm text-white placeholder-apple-gray outline-none transition-colors">
+                        </div>
+                        <div>
+                            <textarea rows="3" required placeholder="Qaysi Apple mahsuloti bo'yicha ma'lumot kerak?" class="w-full bg-black/60 border border-white/10 focus:border-apple-blue rounded-xl px-4 py-3 text-sm text-white placeholder-apple-gray outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-apple-blue hover:bg-apple-blueHover text-white font-medium text-sm py-3.5 rounded-xl transition-colors">
+                            So'rov yuborish
+                        </button>
+                        <p id="contact-feedback" class="hidden text-xs text-emerald-400 text-center pt-1">
+                            Murojaatingiz qabul qilindi! Operatorimiz tez orada bog'lanadi.
+                        </p>
+                    </form>
+                </div>
+
+                <!-- O'ng ustun: Interaktiv Karta (Lokatsiya) -->
+                <div class="lg:col-span-7">
+                    <div class="w-full h-[420px] lg:h-full min-h-[450px] rounded-3xl overflow-hidden border border-white/10 bg-apple-card relative shadow-2xl">
+                        <iframe 
+                            title="Apple Store Tashkent Lokatsiya"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=69.2650%2C41.3050%2C69.2950%2C41.3250&amp;layer=mapnik&amp;marker=41.3150%2C69.2800" 
+                            class="w-full h-full border-0 dark-map-frame"
+                            loading="lazy">
+                        </iframe>
+                        <!-- Karta ustidagi manzil belgisi -->
+                        <div class="absolute bottom-5 left-5 right-5 sm:right-auto bg-black/85 backdrop-blur-xl border border-white/15 rounded-2xl p-4 shadow-xl">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-apple-titanium">Apple Flagship Showroom</p>
+                            <p class="text-sm font-medium text-white mt-0.5">Toshkent sh., Amir Temur shoh ko'chasi</p>
+                            <a href="tel:+998777771122" class="text-xs text-apple-blue hover:underline mt-1 inline-block">+998 77 777 11 22</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. MINIMALIST APPLE FOOTER -->
+    <footer class="bg-apple-dark border-t border-white/10 py-12 text-xs text-apple-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 170 170">
+                        <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.82-11.77-14.37-5.05-7.91-9.2-17.07-12.45-27.49-3.25-10.42-4.88-20.38-4.88-29.89 0-11.17 2.81-20.69 8.43-28.56 5.62-7.87 12.77-11.96 21.45-12.27 4.48 0 9.61 1.32 15.39 3.95 5.78 2.63 9.48 3.99 11.11 4.07 1.35 0 5.45-1.57 12.31-4.7 6.86-3.13 12.66-4.48 17.4-4.05 13.07 1.05 22.91 6.19 29.52 15.42-11.71 7.11-17.46 16.95-17.25 29.51.21 9.85 3.88 18.04 11.01 24.58 7.13 6.54 15.61 10.02 25.44 10.45-2.03 6.13-4.38 12.01-7.05 17.64zM119.22 31.83c0 7.67-2.8 14.84-8.41 21.52-6.75 7.89-14.92 12.44-23.79 11.72-.16-.95-.25-1.96-.25-3.03 0-7.36 3.16-15.22 8.78-21.65 2.8-3.21 6.37-5.88 10.71-8.01 4.34-2.13 8.44-3.32 12.31-3.57.43 1.03.65 2.04.65 3.02z"/>
+                    </svg>
+                    <span class="text-white font-semibold">Apple Store Uzbekistan</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#home" class="hover:text-white transition-colors">Bosh sahifa</a>
+                    <a href="#about" class="hover:text-white transition-colors">Kompaniya</a>
+                    <a href="#products" class="hover:text-white transition-colors">Mahsulotlar</a>
+                    <a href="#iphone18duo" class="hover:text-white transition-colors">iPhone 18 Duo</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Bog'lanish</a>
+                </div>
+            </div>
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>Copyright © 2026 Apple Uzbekistan. Barcha huquqlar himoyalangan.</p>
+                <p>Rasmiy aloqa: <a href="tel:+998777771122" class="text-apple-silver hover:text-white">+998 77 777 11 22</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BUYURTMA BERISH MODALI (alert() o'rniga zamonaviy Apple oynasi) -->
+    <div id="order-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+        <div class="bg-apple-card border border-white/15 rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl transform transition-all">
+            <button onclick="closeOrderModal()" class="absolute top-5 right-5 text-apple-gray hover:text-white p-1" aria-label="Yopish">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <span class="text-xs font-semibold uppercase tracking-widest text-apple-titanium">Tezkor Buyurtma</span>
+            <h3 id="modal-product-name" class="text-2xl font-bold text-white mt-1 mb-1">MacBook Pro 16"</h3>
+            <p id="modal-product-price" class="text-lg font-semibold text-apple-blue mb-6">$2,499</p>
+
+            <form id="modal-order-form" class="space-y-4">
+                <div>
+                    <label class="text-xs text-apple-gray block mb-1.5">Ism va familiyangiz</label>
+                    <input type="text" required placeholder="Masalan: Azizbek Karimov" class="w-full bg-black/60 border border-white/10 focus:border-apple-blue rounded-xl px-4 py-3 text-sm text-white outline-none">
+                </div>
+                <div>
+                    <label class="text-xs text-apple-gray block mb-1.5">Telefon raqamingiz</label>
+                    <input type="tel" required placeholder="+998 90 123 45 67" class="w-full bg-black/60 border border-white/10 focus:border-apple-blue rounded-xl px-4 py-3 text-sm text-white outline-none">
+                </div>
+                <button type="submit" class="w-full bg-apple-blue hover:bg-apple-blueHover text-white font-medium text-sm py-3.5 rounded-xl transition-colors mt-2">
+                    Buyurtmani tasdiqlash
+                </button>
+            </form>
+
+            <div id="modal-success" class="hidden text-center py-6 space-y-3">
+                <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-white">Buyurtmangiz qabul qilindi!</h4>
+                <p class="text-xs text-apple-gray">Mutaxassisimiz 5 daqiqa ichida +998 77 777 11 22 raqamidan siz bilan bog'lanadi.</p>
+                <button onclick="closeOrderModal()" class="mt-2 bg-white/10 hover:bg-white/20 text-white text-xs font-medium px-6 py-2.5 rounded-full">
+                    Yopish
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery va Owl Carousel 2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Owl Carousel ishga tushirish
+            const owl = $('#apple-products-carousel').owlCarousel({
+                loop: true,
+                margin: 16,
+                nav: false,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 4500,
+                autoplayHoverPause: true,
+                smartSpeed: 750,
+                responsive: {
+                    0: { items: 1 },
+                    640: { items: 2 },
+                    1024: { items: 3 },
+                    1280: { items: 4 }
+                }
+            });
+
+            // Maxsus navigatsiya tugmalari
+            $('#owl-next-btn').click(function () {
+                owl.trigger('next.owl.carousel');
+            });
+            $('#owl-prev-btn').click(function () {
+                owl.trigger('prev.owl.carousel');
+            });
+        });
+
+        // Mobil menyuni ochish/yopish
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Scroll Reveal Animatsiyasi (IntersectionObserver)
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Buyurtma modalini boshqarish
+        const orderModal = document.getElementById('order-modal');
+        const modalForm = document.getElementById('modal-order-form');
+        const modalSuccess = document.getElementById('modal-success');
+
+        function openOrderModal(productName, productPrice) {
+            document.getElementById('modal-product-name').textContent = productName;
+            document.getElementById('modal-product-price').textContent = productPrice;
+            modalForm.classList.remove('hidden');
+            modalSuccess.classList.add('hidden');
+            orderModal.classList.remove('hidden');
+            orderModal.classList.add('flex');
+        }
+
+        function closeOrderModal() {
+            orderModal.classList.add('hidden');
+            orderModal.classList.remove('flex');
+        }
+
+        modalForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            modalForm.classList.add('hidden');
+            modalSuccess.classList.remove('hidden');
+            modalForm.reset();
+        });
+
+        // Bog'lanish formasi
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const feedback = document.getElementById('contact-feedback');
+            feedback.classList.remove('hidden');
+            this.reset();
+            setTimeout(() => feedback.classList.add('hidden'), 5000);
+        });
+    </script>
+</body>
+</html>
